@@ -1,0 +1,1 @@
+This is Sharon Cha's workout01. The purpose of this assignment is to gain experience with makng amore complex file structure and using GitHub for the first time. Also, we are to visualize shot data from various GSW players, making things such as "shot charts". Then, I make a report as an analyst. 
