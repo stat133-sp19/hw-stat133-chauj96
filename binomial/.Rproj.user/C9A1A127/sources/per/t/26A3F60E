@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556675280310.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2832003901",
+    "id" : "26A3F60E",
+    "lastKnownWriteTime" : 1556704652,
+    "last_content_update" : 1556704652438,
+    "path" : "~/binomial/R/binomial.R",
+    "project_path" : "R/binomial.R",
+    "properties" : {
+        "cursorPosition" : "323,0",
+        "scrollLine" : "291"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,117 @@
+---
+title: "Binomial"
+author: "Sharon Cha"
+date: "4/30/2019"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(binomial)
+```
+
+## Binomial
+
+The package `"binomial"` is an R package that implements functions for calculating probabilities of a Binomial random variable, and related calculations such as the probability distribution, the exptected value, variance, etc. Moreover, the package also gives the summary of Binomial and visualizes the summary.
+
+## bin_choose()
+
+Once you have defined `"success"` and `"trials"`, you can use the function `bin_choose()` to calculate the number of combinations in which k successes in n trials. However, your `"success"` cannot be larger than `"trials"`.
+
+```{r}
+bin_choose(trials = 5, success = 4)
+```
+
+## bin_probability()
+
+In order to use `bin_probabiliy`, it needs `"success"`, `"trials"`, `"prob"` to be defined. The function computes the binomial probability. The users will be warned when there are some errors in the values of `"success"`, `"trials"`, `"prob"` (i.e `"success"` is greater than `"trials"`, `"trials"` is not an integer value, etc.)
+
+```{r}
+bin_probability(success = 3, trials = 4, prob = 0.5)
+```
+
+## bin_distribution()
+
+The function `bin_probabiliy` calculates and displays the binomial probability of each number of success as a table.
+```{r}
+# binomial probability distribution
+bin_distribution(trials = 5, prob = 0.5)
+```
+
+It also has a plotting method that graphs a barplot to display the probability histogram of a binomial distribution.
+```{r}
+# plotting binomial probability distribution
+dis1 <- bin_distribution(trials = 5, prob = 0.5)
+plot(dis1)
+```
+
+## bin_cumulative()
+
+The function `bin_cumulative` should return a data frame with both the probability distribution and the cumulative probabilities.
+```{r}
+# binomial cumulative distribution
+bin_cumulative(trials = 5, prob = 0.5)
+```
+
+The users also can visualize the binomial cumulative distribution. Here is an example.
+```{r}
+# plotting binomial cumulative distribution
+dis2 <- bin_cumulative(trials = 5, prob = 0.5)
+plot(dis2)
+```
+
+## bin_variable()
+
+The function `bin_variable` will return a nice print the content of an object such that `"success"`, `"trials"`.
+```{r}
+bin1 <- bin_variable(trials = 10, prob = 0.3)
+bin1
+```
+
+Moreover, the user can get a full summary description of an object, such that, `"trials"`, `"prob"`, `"mean"`, `"variance"`, `"mode"`, `"skewness"`, `"kurtosis"`.
+```{r}
+bin1 <- bin_variable(trials = 10, prob = 0.3)
+binsum1 <- summary(bin1)
+binsum1
+```
+
+
+## bin_mean
+
+The function `bin_mean` returns with the expected value or mean of a binomial distribution of the product of n trials and p probability.
+```{r}
+bin_mean(10, 0.3)
+```
+
+## bin_variance
+
+The function `bin_variance` returns with the variance of the binomial distribution.
+```{r}
+bin_variance(10, 0.3)
+```
+
+## bin_mode
+
+The function `bin_mode` returns with the mode of binomial mode.
+```{r}
+bin_mode(10, 0.3)
+```
+
+## bin_skewness
+
+The function `bin_skewness` returns a measure of the asymmetry of the probability distribution of a random variable about its mean. The skewness value can be positive or negative, or undefined.
+```{r}
+bin_skewness(10, 0.3)
+```
+
+## bin_kurtosis
+
+The function `bin_kurtosis` returns a measure of the "tailedness" of the probability distribution of a random variable. 
+```{r}
+bin_kurtosis(10, 0.3)
+```
+
